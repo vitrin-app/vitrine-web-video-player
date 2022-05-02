@@ -1,0 +1,64 @@
+.timeline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, .25), transparent);
+  z-index: 2;
+}
+
+.inner {
+  position: relative;
+  margin: 4px;
+  margin-right: 0px;
+}
+
+.segment {
+  position: absolute;
+  height: 2px;
+  background-color: rgba(255, 255, 255, .25);
+  border-radius: 2px;
+}
+
+.segmentInner {
+  position: relative;
+}
+
+.segmentProgress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.seek {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.seek.left {
+  left: 0;
+}
+
+.seek.right {
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline {
+    bottom: auto;
+    top: 0;
+    padding-top: 4px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .25), transparent);
+  }
+
+  .seek.right {
+    top: 96px;
+  }
+}
