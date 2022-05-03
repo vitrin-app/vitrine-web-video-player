@@ -11,8 +11,8 @@ import '@vitrin/web-video-player/styles'
 
 export const MyApp = () => (
   // ...
-  <Video url={/* video url */}
-    timeline={/* an array of timestamps */} />
+  <Video url='https://my.cdn/some-video-url'
+    timeline={[{ t: 1.2 }, { t: 3.5 }]} />
   // ...
 )
 ```
