@@ -48,3 +48,19 @@
   right: 0;
   bottom: 256px;
 }
+
+
+[data-justmobile] {
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  [data-justdesktop] {
+    display: none !important;
+  }
+
+  [data-justmobile] {
+    display: block !important;
+  }
+}

@@ -1,11 +1,15 @@
 import { useMemo } from 'react'
+import { HTMLMediaState } from 'react-use/lib/factory/createHTMLMediaHook'
+
+import { Timeline } from '../types'
+import { Segment } from './types'
 
 
-const createSegments = (timeline, duration) => {
+const createSegments = (timeline: Timeline, duration: number) => {
   const res = timeline.map((stamp, index) => ({
     start: stamp.t / duration,
     end: (timeline[index + 1] || { t: duration }).t / duration,
-  }))
+  })) as Segment[]
 
   if (res[0].start !== 0) {
     res.unshift({
@@ -18,14 +22,14 @@ const createSegments = (timeline, duration) => {
 }
 
 
-const segmentProgress = (segment, time) => {
+const segmentProgress = (segment: Segment, time: number) => {
   const R = (time - segment.start) / (segment.end - segment.start)
 
   return Math.min(1, Math.max(0, R))
 }
 
 
-export const useVideoSegments = (timeline, time, state) => {
+export const useVideoSegments = (timeline: Timeline, time: number, state: HTMLMediaState) => {
   const segments = useMemo(() => createSegments(timeline, state.duration), [timeline, state.duration])
 
   return useMemo(() => {

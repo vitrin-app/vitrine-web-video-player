@@ -1,10 +1,22 @@
+import React from 'react'
+
 import styles from './index.module.css'
 
 import { useVideoTime } from './use-video-time'
 import { useVideoSegments, useSegmentControls } from './segments'
+import { Timeline } from './types'
+import { HTMLMediaControls, HTMLMediaState } from 'react-use/lib/factory/createHTMLMediaHook'
 
 
-export const Timeline = ({ timeline, state, element, controls }) => {
+export interface TimelineProps {
+  timeline: Timeline,
+  state: HTMLMediaState,
+  element: HTMLMediaElement,
+  controls: HTMLMediaControls,
+}
+
+
+export const TimelineViewer = ({ timeline, state, element, controls }: TimelineProps) => {
   const time = useVideoTime(element, state)
   const { segments, index } = useVideoSegments(timeline, time, state)
   const { seekNext, seekPrev } = useSegmentControls(segments, index, state, controls)
@@ -31,3 +43,6 @@ export const Timeline = ({ timeline, state, element, controls }) => {
     </>
   )
 }
+
+
+export * from './types'

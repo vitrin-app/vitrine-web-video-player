@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "typeRoots": ["./src/**.d.ts", "./typings/**/*.d.ts"],
+    "jsx": "react",
+  },
+  "include": [
+    "./src/**/*",
+    "./samples/**/*",
+    "./node_modules/microbundle/index.d.ts"
+  ]
+}

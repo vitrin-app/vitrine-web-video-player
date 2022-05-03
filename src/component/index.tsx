@@ -1,12 +1,20 @@
+import React from 'react'
+import { useVideo } from 'react-use'
+
 import styles from './index.module.css'
 
-import { useVideo } from 'react-use'
-import { Timeline } from './timeline'
-import { ReactComponent as PlayIcon } from './play.svg'
-import { ReactComponent as PauseIcon } from './pause.svg'
+import { TimelineViewer, Timeline } from './timeline'
+import { PlayIcon } from './play.icon'
+import { PauseIcon } from './pause.icon'
 
 
-export const Video = ({url, timeline}) => {
+export interface VideoProps {
+  url: string
+  timeline: Timeline
+}
+
+
+export const Video = ({url, timeline}: VideoProps) => {
   const [ video, state, controls, ref ] = useVideo(
     <video src={url} loop playsInline/>
   )
@@ -22,10 +30,10 @@ export const Video = ({url, timeline}) => {
         </div>
         {
           timeline && 
-          <Timeline timeline={timeline} state={state} element={ref.current} controls={controls}/>
+          <TimelineViewer timeline={timeline} state={state} element={ref.current} controls={controls}/>
         }
       </div>
-      <div className={styles.touchZone} justmobile='true' onClick={toggle}/> 
+      <div className={styles.touchZone} data-justmobile='true' onClick={toggle}/> 
     </>
   )
 }
