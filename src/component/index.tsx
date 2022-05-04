@@ -29,11 +29,11 @@ export const Video = ({url, timeline}: VideoProps) => {
           {state.paused ? <PlayIcon/> : <PauseIcon/>}
         </div>
         {
-          timeline && 
+          timeline &&
           <TimelineViewer timeline={timeline} state={state} element={ref.current} controls={controls}/>
         }
       </div>
-      <div className={styles.touchZone} data-justmobile='true' onClick={toggle}/> 
+      <div className={styles.touchZone} data-justmobile='true' onClick={toggle}/>
     </>
   )
 }
