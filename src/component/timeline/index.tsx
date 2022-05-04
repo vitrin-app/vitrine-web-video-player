@@ -23,11 +23,12 @@ export const TimelineViewer = ({ timeline, state, element, controls }: TimelineP
 
   return (
     <>
-      <div className={styles.timeline}>
+      <div className={styles.timeline} role='timeline'>
         <div className={styles.inner}>
           {
             segments.map(({ start, end, progress }, _index) => (
               <div className={styles.segment}
+                role='segment'
                 style={{ left: `${start * 100}%`, width: `calc(${(end - start) * 100}% - 4px)` }}
                 key={_index}>
                 <div className={styles.segmentInner}>

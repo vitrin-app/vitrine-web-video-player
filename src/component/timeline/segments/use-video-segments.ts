@@ -11,6 +11,10 @@ const createSegments = (timeline: Timeline, duration: number) => {
     end: (timeline[index + 1] || { t: duration }).t / duration,
   })) as Segment[]
 
+  if (res.length === 0) {
+    res.push({ start: 0, end: 1 })
+  }
+
   if (res[0].start !== 0) {
     res.unshift({
       start: 0,

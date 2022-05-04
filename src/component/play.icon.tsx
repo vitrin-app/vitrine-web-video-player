@@ -2,7 +2,7 @@ import React from 'react'
 
 
 export const PlayIcon = () => (
-  <svg width="98px" height="98px" viewBox="0 0 98 98" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+  <svg role="play-icon" width="98px" height="98px" viewBox="0 0 98 98" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <title>play</title>
     <g id="website-design" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="icons" transform="translate(-1111.000000, -79.000000)">

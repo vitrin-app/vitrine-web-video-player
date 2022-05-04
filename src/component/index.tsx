@@ -7,6 +7,8 @@ import { TimelineViewer, Timeline } from './timeline'
 import { PlayIcon } from './play.icon'
 import { PauseIcon } from './pause.icon'
 
+export { PauseIcon } from './pause.icon'
+
 
 export interface VideoProps {
   url: string
