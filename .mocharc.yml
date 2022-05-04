@@ -1,8 +1,0 @@
-extension:
-  - ts
-  - tsx
-require: ./test.js
-spec: 
-  - src/**/*.test.ts
-  - src/**/*.test.tsx
-

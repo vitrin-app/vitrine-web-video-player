@@ -39,8 +39,8 @@ export const TimelineViewer = ({ timeline, state, element, controls }: TimelineP
           }
         </div>
       </div>
-      <div className={`${styles.seek} ${styles.left}`} onClick={seekPrev}/>
-      <div className={`${styles.seek} ${styles.right}`} onClick={seekNext}/>
+      <div className={`${styles.seek} ${styles.left}`} role='seek-prev' onClick={seekPrev}/>
+      <div className={`${styles.seek} ${styles.right}`} role='seek-next' onClick={seekNext}/>
     </>
   )
 }

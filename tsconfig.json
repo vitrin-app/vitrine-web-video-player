@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "lib": [ "es2015", "dom" ],
+    "types": ["@types/jest"],
     "typeRoots": ["./src/**.d.ts", "./typings/**/*.d.ts"],
-    "types": [ "mocha", "chai" ],
     "jsx": "react",
   },
   "include": [
