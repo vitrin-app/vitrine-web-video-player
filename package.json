@@ -13,6 +13,22 @@
   "files": [
     "dist"
   ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitrin-app/vitrine-web-video-player.git"
+  },
+  "keywords": [
+    "react",
+    "video",
+    "component"
+  ],
+  "author": "Eugene Ghanizadeh Khoub <ghanizadeh.eugene@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitrin-app/vitrine-web-video-player/issues"
+  },
+  "homepage": "https://github.com/vitrin-app/vitrine-web-video-player#readme",
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage=true",
