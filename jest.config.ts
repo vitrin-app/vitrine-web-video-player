@@ -1,5 +1,6 @@
 export default {
   preset: 'ts-jest',
+  verbose: true,
   clearMocks: true,
   testEnvironment: 'jsdom',
   moduleNameMapper: {

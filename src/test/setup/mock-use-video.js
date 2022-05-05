@@ -8,6 +8,12 @@ jest.mock('react-use', () => {
     useVideo: (args) => {
       const [video, state, controls, ref] = og.useVideo(args)
 
+      og.useInterval(() => {
+        if (!state.paused) {
+          ref.current.currentTime += 20 / 1000
+        }
+      }, state.paused ? null : 20)
+
       return [
         video,
         { ...state, duration: 10 },

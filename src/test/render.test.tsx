@@ -4,7 +4,7 @@ import { render, screen, queryAllByRole } from '@testing-library/react'
 import { Video } from '../component'
 
 
-test('render <Video/> on the screen.', async () => {
+test('renders on the screen.', async () => {
   const { container } = render(<Video url='https://some.cdn/random.mp4' timeline={[]}/>)
 
   const video = container.querySelector('video')
@@ -14,7 +14,7 @@ test('render <Video/> on the screen.', async () => {
 })
 
 
-test('<Video/> renders the proper timeline element with no given timeline.', async () => {
+test('renders the proper timeline element with no given timeline.', async () => {
   render(<Video url='https://some.cdn/random.mp4' timeline={[]}/>)
 
   expect(screen.queryByRole('timeline')).not.toBeNull()
@@ -24,7 +24,7 @@ test('<Video/> renders the proper timeline element with no given timeline.', asy
 })
 
 
-test('<Video/> renders the proper timeline element.', async () => {
+test('renders the proper timeline element.', async () => {
   render(<Video url='https://some.cdn/random.mp4' timeline={[{ t: 0, }, { t: 1 }]}/>)
 
   expect(screen.queryByRole('timeline')).not.toBeNull()
@@ -34,7 +34,7 @@ test('<Video/> renders the proper timeline element.', async () => {
 })
 
 
-test('<Video/> renders the proper timeline element.', async () => {
+test('renders the proper timeline element.', async () => {
   render(<Video url='https://some.cdn/random.mp4' timeline={[{ t: 1, }, { t: 2 }]}/>)
 
   expect(screen.queryByRole('timeline')).not.toBeNull()
