@@ -5,7 +5,19 @@ on:
       - main
       - master
 jobs:
+  check-env:
+    runs-on: ubuntu-latest
+    outputs:
+      check: ${{ steps.check.outputs.defined }}
+    steps:
+      - id: check
+        env:
+          CODACY_PROJECT_TOKEN: '${{ secrets.CODACY_PROJECT_TOKEN }}'
+        if: "${{ env.CODACY_PROJECT_TOKEN != ''}}"
+        run: echo "::set-output name=defined::true"
   do:
+    needs: [check-env]
+    if: needs.check-env.outputs.defined == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

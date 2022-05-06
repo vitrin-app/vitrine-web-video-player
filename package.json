@@ -48,7 +48,6 @@
     "babel-jest": "^28.0.3",
     "eslint": "^8.14.0",
     "identity-obj-proxy": "^3.0.0",
-    "ignore-styles": "^5.0.1",
     "jest": "^28.0.3",
     "jest-environment-jsdom": "^28.0.2",
     "microbundle": "^0.15.0",

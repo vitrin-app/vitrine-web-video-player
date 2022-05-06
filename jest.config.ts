@@ -7,7 +7,10 @@ export default {
     '\\.(css|less)$': 'identity-obj-proxy'
   },
   setupFiles: [
-    './src/test/setup/mock-html-media-element.js',
-    './src/test/setup/mock-use-video.js',
+    './src/test/setup/mocks.js',
+  ],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/src/test/setup/',
   ]
 }
